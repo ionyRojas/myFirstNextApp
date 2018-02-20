@@ -1,20 +1,55 @@
-import Link from 'next/link'
+import styled, { hydrate} from 'react-emotion';
+import Link from 'next/link';
 
-const linkStyle = {
-  marginRight: '20px',
+if (typeof window !== 'undefined') {
+ hydrate(window.__NEXT_DATA__.ids)
 };
 
-const MyFirstView = () => (
+const Item = styled('li') ({
+  margin: '0 10px',
+});
+
+const Title = styled('h1') (
+  {
+    color: 'blue'
+  },
+  (props) => ({
+    fontSize: props.fontSize
+  })
+);
+
+const Index = () => (
   <section>
-    <Link href='/profile'>
-      <a style={linkStyle}>Profile</a>
-    </Link>
-    <Link href='/shows'>
-      <a style={linkStyle}>Shows</a>
-    </Link>
-    <h1>Home</h1>
-    <p>Hola Mundo</p>
+    <ul>
+      <Item>
+        <Link href='/'>
+          <a>Home</a>
+        </Link>
+      </Item>
+      <Item>
+        <Link as='/shows/show1' href='/show?show=show1'>
+          <a>Show 1</a>
+        </Link>
+      </Item>
+      <Item>
+        <Link as='/shows/show2' href='/show?show=show2'>
+          <a>Show 2</a>
+        </Link>
+      </Item>
+      <Item>
+        <Link as='/shows/show3' href='/show?show=show3'>
+          <a>Show 3</a>
+        </Link>
+      </Item>
+      <Item>
+        <Link as='/shows/show4' href='/show?show=show4'>
+          <a>Show 4</a>
+        </Link>
+      </Item>
+    </ul>
+    <Title fontSize='40px'>Home</Title>
+    <p>Hola Desde Home</p>
   </section>
 );
 
-export default MyFirstView;
+export default Index;

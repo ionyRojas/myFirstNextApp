@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "babel-plugin-emotion": "^8.0.12",
+    "emotion": "^8.0.12",
+    "emotion-server": "^8.0.12",
     "next": "^4.2.3",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-emotion": "^8.0.12"
   },
   "devDependencies": {},
   "scripts": {
@@ -15,6 +19,6 @@
     "start": "next start"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jonathan Rojas Lopez",
   "license": "ISC"
 }
